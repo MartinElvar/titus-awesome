@@ -16,7 +16,7 @@ return {
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
     browser = 'brave',
-    editor = 'gedit', -- gui text editor
+    editor = 'emacs', -- gui text editor
     social = 'discord',
     game = rofi_command,
     files = 'nautilus',
@@ -27,8 +27,8 @@ return {
     'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
     'nm-applet --indicator', -- wifi
     'pnmixer', -- shows an audiocontrol applet in systray when installed.
-    --'blueberry-tray', -- Bluetooth tray icon
-    'numlockx on', -- enable numlock
+    'blueberry-tray', -- Bluetooth tray icon
+    -- 'numlockx on', -- enable numlock
     '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
     'xfce4-power-manager', -- Power manager
      'flameshot',

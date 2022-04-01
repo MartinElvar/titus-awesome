@@ -12,15 +12,15 @@ local globalKeys =
   -- Hotkeys
   awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'Show help', group = 'awesome'}),
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  awful.key({modkey}, 'j', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  awful.key({modkey}, 'k', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
   -- Default client focus
   awful.key(
     {modkey},
-    'd',
+    'h',
     function()
       awful.client.focus.byidx(1)
     end,
@@ -28,7 +28,7 @@ local globalKeys =
   ),
   awful.key(
     {modkey},
-    'a',
+    'l',
     function()
       awful.client.focus.byidx(-1)
     end,
@@ -101,7 +101,7 @@ local globalKeys =
   ),
   -- Programms
   awful.key(
-    {modkey},
+    {altkey, modkey},
     'l',
     function()
       awful.spawn(apps.default.lock)
@@ -287,7 +287,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessUp',
     function()
-      awful.spawn('xbacklight -inc 10')
+      awful.spawn('light -A 10')
     end,
     {description = '+10%', group = 'hotkeys'}
   ),
@@ -295,7 +295,7 @@ local globalKeys =
     {},
     'XF86MonBrightnessDown',
     function()
-      awful.spawn('xbacklight -dec 10')
+      awful.spawn('light -U 10')
     end,
     {description = '-10%', group = 'hotkeys'}
   ),

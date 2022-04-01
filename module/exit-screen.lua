@@ -42,6 +42,10 @@ function suspend_command()
   exit_screen_hide()
   awful.spawn.with_shell(apps.default.lock .. ' & systemctl suspend')
 end
+function hybernate_command()
+  exit_screen_hide()
+  awful.spawn.with_shell(apps.default.lock .. ' & systemctl hibernate')
+end
 function exit_command()
   _G.awesome.quit()
 end
@@ -79,6 +83,14 @@ suspend:connect_signal(
   'button::release',
   function()
     suspend_command()
+  end
+)
+
+local hybernate = buildButton(icons.owl, 'Hybernate')
+hybernate:connect_signal(
+  'button::release',
+  function()
+    hybernate_command()
   end
 )
 
@@ -186,6 +198,7 @@ exit_screen:setup {
       poweroff,
       reboot,
       suspend,
+      hybernate,
       exit,
       lock,
       layout = wibox.layout.fixed.horizontal
